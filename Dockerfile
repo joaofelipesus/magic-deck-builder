@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -qq -y --no-install-recommends \
 nodejs yarn build-essential libpq-dev imagemagick git-all nano
 
 # Seta nosso path
-ENV INSTALL_PATH /magick-deck-builder
+ENV INSTALL_PATH /magic-deck-builder
 
 # Cria nosso diretório
 RUN mkdir -p $INSTALL_PATH
