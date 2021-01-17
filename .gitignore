@@ -30,3 +30,6 @@
 
 # simplecov results dir
 coverage/
+
+#node modules
+node_modules/
