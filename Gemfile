@@ -23,7 +23,8 @@ gem 'devise'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# REXML is an XML toolkit for Ruby
+gem 'rexml'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
