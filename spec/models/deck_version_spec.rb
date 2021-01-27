@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe DeckVersion, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { create(:deck_version) }
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:deck) }
+  it { should validate_uniqueness_of(:name).scoped_to(:deck_id) }
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateDeckVersions < ActiveRecord::Migration[6.1]
   def change
     create_table :deck_versions, id: :uuid do |t|
