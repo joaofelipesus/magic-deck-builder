@@ -4,10 +4,6 @@ module Parsers
   module Cards
     class MagicIo
       def self.parse(params)
-        # card_params = HashWithIndifferentAccess.new(params['cards'])
-        # p params[:cards].first
-        # p params
-        # p card_params
         card_params = params[:cards].first
         Card.new(
           name: card_params[:name],
