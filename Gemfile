@@ -64,6 +64,8 @@ group :test do
   gem 'shoulda-matchers', '~> 4.0'
   # A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker'
+  # Library for stubbing and setting expectations on HTTP requests in Ruby.
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
