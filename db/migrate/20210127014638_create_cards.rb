@@ -8,7 +8,7 @@ class CreateCards < ActiveRecord::Migration[6.1]
       t.text :types, array: true, default: []
       t.string :mana_cost
       t.integer :power
-      t.integer :toughenss
+      t.integer :toughness
       t.text :colors, array: true, default: []
 
       t.timestamps
