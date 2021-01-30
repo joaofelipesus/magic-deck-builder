@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_014638) do
+ActiveRecord::Schema.define(version: 2021_01_30_123750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "card_decks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "card_id", null: false
+    t.uuid "deck_id", null: false
+    t.uuid "version_added_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["card_id"], name: "index_card_decks_on_card_id"
+    t.index ["deck_id"], name: "index_card_decks_on_deck_id"
+    t.index ["version_added_id"], name: "index_card_decks_on_version_added_id"
+  end
 
   create_table "cards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
@@ -63,6 +74,9 @@ ActiveRecord::Schema.define(version: 2021_01_27_014638) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "card_decks", "cards"
+  add_foreign_key "card_decks", "deck_versions", column: "version_added_id"
+  add_foreign_key "card_decks", "decks"
   add_foreign_key "deck_versions", "decks"
   add_foreign_key "decks", "users", column: "owner_id"
 end
