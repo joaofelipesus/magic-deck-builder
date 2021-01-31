@@ -4,15 +4,14 @@ module Parsers
   module Cards
     class MagicIo
       def self.parse(params)
-        card_params = params[:cards].first
         Card.new(
-          name: card_params[:name],
-          external_id: card_params[:id],
-          types: card_params[:types],
-          mana_cost: card_params[:manaCost],
-          power: card_params[:power],
-          toughness: card_params[:toughness],
-          colors: card_params[:colors]
+          name: params[:name],
+          external_id: params[:multiverseid],
+          types: params[:types],
+          mana_cost: params[:manaCost],
+          power: params[:power],
+          toughness: params[:toughness],
+          colors: params[:colors]
         )
       end
     end
