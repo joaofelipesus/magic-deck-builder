@@ -11,11 +11,15 @@ module Services
 
       def call
         card = Card.find_by(name: card_name)
-        if card_name.nil?
-          puts 'load_card'
-          puts 'persist card'
-          card = nil
-        end
+        card = load_card if card.nil?
+        card
+      end
+
+      private
+
+      def load_card
+        card = Loaders::MagicIo::Card.new(card_name: card_name).load
+        card.save
         card
       end
     end
