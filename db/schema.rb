@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_123750) do
     t.text "types", default: [], array: true
     t.string "mana_cost"
     t.integer "power"
-    t.integer "toughenss"
+    t.integer "toughness"
     t.text "colors", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

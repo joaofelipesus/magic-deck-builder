@@ -27,9 +27,10 @@ gem 'devise'
 gem 'rexml'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+# Simple HTTP and REST client for Ruby, inspired by microframework syntax for specifying actions.
+gem 'rest-client'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -63,6 +64,8 @@ group :test do
   gem 'shoulda-matchers', '~> 4.0'
   # A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker'
+  # Library for stubbing and setting expectations on HTTP requests in Ruby.
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
