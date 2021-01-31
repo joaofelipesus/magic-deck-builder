@@ -10,7 +10,7 @@ module Services
       end
 
       def call
-        card = Card.find_by(name: card_name)
+        card = Card.where('name ILIKE ?', "%#{card_name}%").first
         card = load_card if card.nil?
         card
       end
